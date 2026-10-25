@@ -49,7 +49,9 @@ internal sealed class MainForm : Form
         backupLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70));
         backupLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30));
         backupLayout.Controls.Add(backups, 0, 0);
-        var backupActions = new FlowLayoutPanel { Dock = DockStyle.Fill, FlowDirection = FlowDirection.TopDown };
+        var backupActions = new TableLayoutPanel { Dock = DockStyle.Fill, ColumnCount = 1, RowCount = 3 }; // 固定单列，防止窗口缩放时第三个按钮被换列裁切。
+        backupActions.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
+        for (var index = 0; index < 3; index++) backupActions.RowStyles.Add(new RowStyle(SizeType.Percent, 33.333F));
         backupActions.Controls.Add(ActionButton("刷新备份列表", RefreshBackups));
         backupActions.Controls.Add(ActionButton("恢复选中的备份", Restore));
         backupActions.Controls.Add(ActionButton("打开备份目录", OpenBackups));
@@ -215,5 +217,8 @@ internal sealed class MainForm : Form
     private void OpenFile(bool example) { try { OpenUrl(AssetStore.Materialize(example)); } catch (Exception exception) { report.Text = exception.Message; } }
     private void OpenUrl(string target) { try { Process.Start(new ProcessStartInfo(target) { UseShellExecute = true }); } catch (Exception exception) { report.Text = exception.Message; } }
     private static string Format(OperationResult result) => (result.Success ? "完成：" : "未完成：") + result.Message + (result.OutputPath is null ? "" : "\r\n文件：" + result.OutputPath) + (result.ReceiptPath is null ? "" : "\r\n回执：" + result.ReceiptPath) + "\r\n" + string.Join("\r\n", result.Warnings); // 真实状态由核心事务返回。
-    private sealed record BackupItem(BackupReceipt Receipt) { public override string ToString() => Receipt.CreatedAt + "  " + Receipt.Operation; } // 不使用无法辨认的内部 ID 作为唯一标签。
+    private sealed record BackupItem(BackupReceipt Receipt)
+    {
+        public override string ToString() => Receipt.CreatedAt.LocalDateTime.ToString("yyyy-MM-dd HH:mm:ss") + " · " + (Receipt.Operation == "restore" ? "恢复前备份" : "安装前备份"); // 日期和中文用途便于用户选择版本。
+    }
 }

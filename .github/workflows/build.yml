@@ -15,6 +15,9 @@ jobs:
       - uses: actions/setup-dotnet@v4
         with:
           global-json-file: global.json
+      - name: Audit public source and Office metadata
+        shell: pwsh
+        run: python scripts/audit_public.py
       - name: Build tested portable packages
         shell: pwsh
         run: ./scripts/build.ps1

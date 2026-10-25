@@ -3,24 +3,24 @@
   "files": [
     {
       "file": "郑大论文样式.dotx",
-      "sha256": "9fda178b937f03f4f8f59b6060af3431b28c77606099213aa78d4ec8b2fc3601",
-      "bytes": 38279,
+      "sha256": "2d3643240c184dab9d8f194ff71c3f29da6a005458c299068c5f586a2937d1da",
+      "bytes": 38284,
       "changedParts": [
         "docProps/core.xml"
       ]
     },
     {
       "file": "郑大论文样式示例.docx",
-      "sha256": "f17b1d97a146b9b056ff5ce19652f48cbb40a9ee564611362196437b147f87f9",
-      "bytes": 35554,
+      "sha256": "65d8261378fc6c9c0d944276d83b84440dbaae66d46294466cffeb8363ebd72d",
+      "bytes": 35560,
       "changedParts": [
         "docProps/core.xml"
       ]
     },
     {
       "file": "style-spec.json",
-      "sha256": "b0934c97d190d556d9a70a420f9656ed29b9df6f377d4e37a5ab21dbbaf827a6",
-      "bytes": 102651
+      "sha256": "b8d13cd18f53b9707c8a817d910df941abc9982c3ca3c30277d685b5716eee8d",
+      "bytes": 98411
     }
   ]
 }

@@ -31,8 +31,9 @@ try
         Check(xml.Descendants(W + "lsdException").Count() == 2, "原潜在样式例外丢失");
         Check(xml.Descendants(W + "lang").Any(x => x.Attribute(W + "eastAsia")?.Value == "zh-CN"), "默认语言丢失");
         Check(xml.Descendants(W + "kern").Any(x => x.Attribute(W + "val")?.Value == "2"), "默认字距丢失");
-        var aliases = xml.Descendants(W + "aliases").Select(x => x.Attribute(W + "val")?.Value).ToList();
-        Check(aliases.Count == aliases.Distinct().Count(), "项目别名不是每个样式唯一");
+        var aliases = xml.Descendants(W + "aliases").Select(x => x.Attribute(W + "val")?.Value ?? "").ToList();
+        Check(aliases.All(x => !x.Contains("ZZUWordStyles.Managed")), "样式库被内部管理别名污染");
+        Check(Style(xml, "h1local").Element(W + "aliases")?.Attribute(W + "val")?.Value == "原有章标题", "用户内置样式别名未保留");
         Check(Style(xml, "h1local").Element(W + "pPr")?.Element(W + "numPr")?.Element(W + "numId")?.Attribute(W + "val")?.Value == "7", "标题关联多级编号丢失");
     });
     Test("idempotent_and_read_only_inspection", () =>
@@ -51,6 +52,19 @@ try
         Check(xml.Descendants(W + "docDefaults").Count() == 1, "默认属性未补齐");
         Check(Style(xml, "Heading2").Element(W + "name")?.Attribute(W + "val")?.Value == "自定义旧样式", "ID 冲突覆盖了其他样式");
         Check(Style(xml, "ZZU_Heading2").Element(W + "name")?.Attribute(W + "val")?.Value == "heading 2", "新增标题未安全分配ID");
+    });
+    Test("preserve_user_aliases_remove_only_internal_candidate_aliases", () =>
+    {
+        var first = Parts(StylePackage.Merge(Fixture(), source));
+        var xml = XDocument.Parse(Encoding.UTF8.GetString(first["word/styles.xml"]));
+        Style(xml, "图题").Element(W + "name")!.AddAfterSelf(new XElement(W + "aliases", new XAttribute(W + "val", "用户图题别名,ZZUWordStyles.Managed.图题")));
+        first["word/styles.xml"] = Encoding.UTF8.GetBytes(xml.ToString());
+        var merged = Parts(StylePackage.Merge(Pack(first), source));
+        var checkedXml = XDocument.Parse(Encoding.UTF8.GetString(merged["word/styles.xml"]));
+        Check(Style(checkedXml, "图题").Element(W + "aliases")?.Attribute(W + "val")?.Value == "用户图题别名", "自定义用户别名未保留或内部标记未移除");
+        Style(xml, "图题").Element(W + "rPr")!.Element(W + "sz")!.SetAttributeValue(W + "val", "44");
+        first["word/styles.xml"] = Encoding.UTF8.GetBytes(xml.ToString());
+        Reject(() => StylePackage.Merge(Pack(first), source));
     });
     Test("reject_ambiguous_custom_name_and_duplicate_ids", () =>
     {
@@ -181,7 +195,7 @@ byte[] Fixture(bool missingDefaults = false, bool idCollision = false, string ex
 {
     var defaults = missingDefaults ? "" : "<w:docDefaults><w:rPrDefault><w:rPr><w:rFonts w:eastAsia='等线'/><w:kern w:val='2'/><w:lang w:eastAsia='zh-CN'/></w:rPr></w:rPrDefault><w:pPrDefault><w:pPr><w:spacing w:after='160'/></w:pPr></w:pPrDefault></w:docDefaults>";
     var collision = idCollision ? "<w:style w:type='paragraph' w:customStyle='1' w:styleId='Heading2'><w:name w:val='自定义旧样式'/><w:basedOn w:val='a'/></w:style>" : "";
-    var styles = "<w:styles xmlns:w='" + W + "'>" + defaults + "<w:latentStyles w:count='376'><w:lsdException w:name='heading 1' w:qFormat='1'/><w:lsdException w:name='Title' w:qFormat='1'/></w:latentStyles><w:style w:type='paragraph' w:default='1' w:styleId='a'><w:name w:val='正文'/><w:rPr><w:rFonts w:eastAsia='等线'/></w:rPr></w:style><w:style w:type='character' w:default='1' w:styleId='a0'><w:name w:val='默认段落字体'/></w:style><w:style w:type='paragraph' w:styleId='h1local'><w:name w:val='标题 1'/><w:basedOn w:val='a'/><w:pPr><w:numPr><w:ilvl w:val='0'/><w:numId w:val='7'/></w:numPr></w:pPr></w:style><w:style w:type='paragraph' w:customStyle='1' w:styleId='personal'><w:name w:val='个人样式'/><w:basedOn w:val='a'/><w:qFormat/><w:pPr><w:spacing w:after='55'/></w:pPr></w:style>" + collision + extraStyle + "</w:styles>";
+    var styles = "<w:styles xmlns:w='" + W + "'>" + defaults + "<w:latentStyles w:count='376'><w:lsdException w:name='heading 1' w:qFormat='1'/><w:lsdException w:name='Title' w:qFormat='1'/></w:latentStyles><w:style w:type='paragraph' w:default='1' w:styleId='a'><w:name w:val='正文'/><w:rPr><w:rFonts w:eastAsia='等线'/></w:rPr></w:style><w:style w:type='character' w:default='1' w:styleId='a0'><w:name w:val='默认段落字体'/></w:style><w:style w:type='paragraph' w:styleId='h1local'><w:name w:val='标题 1'/><w:aliases w:val='原有章标题'/><w:basedOn w:val='a'/><w:pPr><w:numPr><w:ilvl w:val='0'/><w:numId w:val='7'/></w:numPr></w:pPr></w:style><w:style w:type='paragraph' w:customStyle='1' w:styleId='personal'><w:name w:val='个人样式'/><w:basedOn w:val='a'/><w:qFormat/><w:pPr><w:spacing w:after='55'/></w:pPr></w:style>" + collision + extraStyle + "</w:styles>";
     return Pack(new Dictionary<string, byte[]>
     {
         ["[Content_Types].xml"] = "<Types xmlns='http://schemas.openxmlformats.org/package/2006/content-types'/>"u8.ToArray(),

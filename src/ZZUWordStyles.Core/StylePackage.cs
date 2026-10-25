@@ -96,12 +96,13 @@ public static class StylePackage
                     var preceding = paragraph.Elements().LastOrDefault(x => x.Name.LocalName is "pStyle" or "keepNext" or "keepLines" or "pageBreakBefore" or "framePr" or "widowControl");
                     if (preceding is null) paragraph.AddFirst(new XElement(oldNumbering)); else preceding.AddAfterSelf(new XElement(oldNumbering));
                 }
-                if (!IsBuiltin(sourceStyle) && !IsManaged(old) && !EquivalentFormat(old, replacement))
+                if (!IsBuiltin(sourceStyle) && !EquivalentFormat(old, replacement))
                     throw new InvalidDataException($"已有自定义样式“{Name(old)}”与项目样式同名但格式不同。已停止，原文件未更改。");
                 var defaultFlag = old.Attribute(W + "default");
                 if (defaultFlag is not null) replacement.SetAttributeValue(W + "default", defaultFlag.Value);
             }
-            if (!IsBuiltin(sourceStyle) && !isDependency) MarkManaged(replacement);
+            // 不写入内部管理别名，Word 会把别名直接显示到 NameLocal 与样式库。
+            PreserveUserAliases(replacement, old);
             if (old is null) root.Add(replacement); else old.ReplaceWith(replacement);
         }
 
@@ -227,7 +228,7 @@ public static class StylePackage
     private static XDocument ParseXml(byte[] bytes)
     {
         using var stream = new MemoryStream(bytes, writable: false);
-        using var reader = XmlReader.Create(stream, new XmlReaderSettings { DtdProcessing = DtdProcessing.Prohibit, XmlResolver = null, MaxCharactersInDocument = 256L * 1024 * 1024 });
+        using var reader = XmlReader.Create(stream, new XmlReaderSettings { DtdProcessing = DtdProcessing.Prohibit, XmlResolver = null, IgnoreWhitespace = true, MaxCharactersInDocument = 256L * 1024 * 1024 });
         return XDocument.Load(reader); // 去掉排版空白后比较 XML 语义，不依赖原保存器的缩进。
     }
 
@@ -295,23 +296,28 @@ public static class StylePackage
         foreach (var item in new[] { a, b })
         {
             item.Attribute(W + "styleId")?.Remove();
+            // 保存器可移动 xmlns 声明；前缀的书写位置不是样式格式差异。
+            item.DescendantsAndSelf().Attributes().Where(x => x.IsNamespaceDeclaration).Remove();
+            item.DescendantNodes().OfType<XText>().Where(x => string.IsNullOrWhiteSpace(x.Value)).Remove();
             foreach (var local in new[] { "aliases", "uiPriority", "qFormat", "semiHidden", "unhideWhenUsed", "rsid" }) item.Elements(W + local).Remove();
         }
         return XNode.DeepEquals(a, b);
     }
 
-    private static void MarkManaged(XElement style)
+    private static void PreserveUserAliases(XElement replacement, XElement? original)
     {
-        var aliases = style.Element(W + "aliases");
-        if (aliases is null) { aliases = new XElement(W + "aliases"); style.Element(W + "name")!.AddAfterSelf(aliases); }
-        var values = Value(aliases).Split(',', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries).ToList();
-        // Word 别名与样式名称共用命名空间，每项必须有不同的管理标记。
-        var marker = ManagedAlias + "." + Id(style);
-        if (!values.Contains(marker, StringComparer.Ordinal)) values.Add(marker);
-        aliases.SetAttributeValue(W + "val", string.Join(',', values));
+        var aliases = original?.Element(W + "aliases") ?? replacement.Element(W + "aliases");
+        if (aliases is null) return;
+        var retained = new XElement(aliases);
+        var values = Value(retained).Split(',', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
+        var userValues = values.Where(x => x != ManagedAlias && !x.StartsWith(ManagedAlias + ".", StringComparison.Ordinal)).ToArray();
+        replacement.Elements(W + "aliases").Remove();
+        if (userValues.Length == 0) return;
+        // 未含内部标记时保留用户原来的别名内容和顺序；只移除早期测试候选中的项目标记。
+        if (userValues.Length != values.Length) retained.SetAttributeValue(W + "val", string.Join(',', userValues));
+        replacement.Element(W + "name")!.AddAfterSelf(retained);
     }
 
-    private static bool IsManaged(XElement style) => Value(style.Element(W + "aliases")).Split(',', StringSplitOptions.TrimEntries).Contains(ManagedAlias + "." + Id(style), StringComparer.Ordinal);
     private static bool IsBuiltin(XElement style) => Builtins.ContainsKey(Name(style));
     private static bool IsEnabledAttribute(XElement node, string name) => Attribute(node, name) is "1" or "true" or "on";
     private static string Name(XElement node) => Value(node.Element(W + "name"));

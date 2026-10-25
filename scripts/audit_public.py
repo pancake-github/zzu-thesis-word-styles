@@ -1,5 +1,7 @@
 """发布前检查源码白名单、个人信息与 Office 包内元数据。"""  # 不读取论文原件或用户默认模板。
 import json  # 仅输出检查结论。
+import io  # 验证 XML 属性中 QName 引用的命名空间。
+import hashlib  # 核对发布资产清单。
 import re  # 检查本机绝对路径和凭据样式。
 import subprocess  # 发布审核依据实际 Git 跟踪文件。
 import sys  # 通过退出码阻止错误发布。
@@ -31,9 +33,13 @@ def audit():  # 校验实际版本库，而不是任意整个工作区。
                     if name.endswith('.rels') and b'TargetMode="External"' in archive.read(name):
                         failures.append((relative, 'external-office-relationship'))
                 core = ET.fromstring(archive.read('docProps/core.xml'))
+                namespaces = dict(value for _, value in ET.iterparse(io.BytesIO(archive.read('docProps/core.xml')), events=('start-ns',)))
                 for element in core:
                     if element.tag.rsplit('}', 1)[-1] in ('creator', 'lastModifiedBy') and (element.text or '').strip():
                         failures.append((relative, 'personal-author-metadata'))
+                    type_name = element.get('{http://www.w3.org/2001/XMLSchema-instance}type', '')
+                    if ':' in type_name and type_name.split(':', 1)[0] not in namespaces:
+                        failures.append((relative, 'undefined-metadata-qname-prefix'))
         elif path.suffix.lower() not in ('.png', '.jpg', '.jpeg', '.ico'):
             text = path.read_text(encoding='utf-8-sig')  # 源码和文档应当使用 UTF-8。
             if re.search(r'[A-Za-z]:[\\/](?:Users|ZZDX-NSCC|郑州大学)', text, re.I):
@@ -41,6 +47,11 @@ def audit():  # 校验实际版本库，而不是任意整个工作区。
             if re.search(r'gh[pousr]_[A-Za-z0-9]{25,}|github_pat_[A-Za-z0-9_]{30,}', text):
                 failures.append((relative, 'credential-pattern'))
         count += 1
+    manifest = json.loads((ROOT / 'assets' / 'asset-manifest.json').read_text(encoding='utf-8'))
+    for entry in manifest['files']:  # 同时捕捉跨系统换行转换导致的 JSON 校验失配。
+        asset = ROOT / 'assets' / entry['file']
+        if asset.stat().st_size != entry['bytes'] or hashlib.sha256(asset.read_bytes()).hexdigest() != entry['sha256']:
+            failures.append(('assets/' + entry['file'], 'asset-manifest-hash-mismatch'))
     return {'passed': not failures, 'files_checked': count, 'failures': failures}  # 安全的公共审核摘要。
 
 if __name__ == '__main__':

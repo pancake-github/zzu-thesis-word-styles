@@ -145,6 +145,7 @@ public static class WordIntegration
                             finally { Release(style); }
                         }
                         Require(actualQuick.SetEquals(expectedQuick) && actualQuick.Count == 12, "常用样式库并非约定的十二项。");
+                        report.QuickStyles = actualQuick.OrderBy(name => name, StringComparer.Ordinal).ToList(); // 显示名称由 Word 实际读取，不从模板文件推断。
                         report.Messages.Add($"第 {currentRound} 次独立启动通过：正文、初始输入位置、26 项样式、12 项常用入口、四级标题及图表题间距。");
                     }
                     finally { document.Close(0); } // 仅关闭本次创建的空白测试文档，不保存到最近文件。
@@ -231,27 +232,47 @@ public static class WordIntegration
         finally
         {
             scope.Dispose(); // 先释放 Document/Style/Template 等子引用。
+            bool preserveUnexpectedDocuments = false; // 用户在验收期间打开的文档必须保留。
             if (app is not null)
             {
-                try { if (security.HasValue) app.AutomationSecurity = security.Value; }
-                catch (COMException) { /* Word 已退出时没有可恢复的活实例。 */ }
-                try { if (alerts.HasValue) app.DisplayAlerts = alerts.Value; }
-                catch (COMException) { /* 同上；不更改其他 Word 实例。 */ }
-                try { app.Quit(0); } // 放弃本次临时文档与隐式模板修改。
+                try
+                {
+                    try { if (security.HasValue) app.AutomationSecurity = security.Value; }
+                    catch (COMException) { /* Word 已退出时没有可恢复的活实例。 */ }
+                    try { if (alerts.HasValue) app.DisplayAlerts = alerts.Value; }
+                    catch (COMException) { /* 同上；不更改其他 Word 实例。 */ }
+                    dynamic? documents = null;
+                    try
+                    {
+                        documents = app.Documents;
+                        preserveUnexpectedDocuments = Convert.ToInt32(documents.Count) > 0; // 本库自己的测试文档此时已在内层 finally 关闭。
+                    }
+                    finally { Release(documents); }
+                    ownProcessIds = ownProcessIds.Concat(GetWordProcessIds()).Distinct().ToArray(); // Word 的启动器可能已退出，退出前补充实际服务进程。
+                    if (!preserveUnexpectedDocuments) app.Quit(0); // 只在没有任何文档时退出自建 Word。
+                    else app.Visible = true; // 若用户或加载项打开了额外文档，保留并显示它，而不是放弃其内容。
+                }
                 finally { Release(app); }
             }
             GC.Collect(); // 清理动态绑定可能留下的可回收 COM 包装。
             GC.WaitForPendingFinalizers();
+            if (preserveUnexpectedDocuments)
+                throw new InvalidOperationException("自建 Word 会话中出现额外文档，已保留该窗口并停止后续操作。请保存并关闭 Word 后重试。");
+            var exitWait = Stopwatch.StartNew(); // 为整个退出阶段设置统一上限，避免多个进程累积长时间等待。
             foreach (int pid in ownProcessIds)
             {
                 try
                 {
                     using Process process = Process.GetProcessById(pid);
-                    if (!process.WaitForExit(15_000))
+                    if (!process.WaitForExit(Math.Max(0, 15_000 - (int)exitWait.ElapsedMilliseconds)))
                         throw new InvalidOperationException("自建 Word 会话尚未正常退出；已停止后续文件写入，请关闭 Word 后重试。");
                 }
                 catch (ArgumentException) { /* 进程已正常退出。 */ }
             }
+            // Office 可能短暂产生晚于第一次 PID 快照的退出进程；等待它们结束，但从不终止进程。
+            while (IsWordRunning() && exitWait.ElapsedMilliseconds < 15_000) Thread.Sleep(100);
+            if (IsWordRunning())
+                throw new InvalidOperationException("Word 尚未退出或又有窗口打开；已停止后续操作，请保存并关闭 Word 后重试。");
         }
     }
 

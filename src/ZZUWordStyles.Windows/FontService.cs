@@ -14,15 +14,15 @@ public static class FontService
     private const int VerifiedKaiTiLength = 4_135_804; // 对应校方附件内已经检查过的 Version 2.00。
     private const string FontRegistryPath = @"Software\Microsoft\Windows NT\CurrentVersion\Fonts";
     private const string FontRegistryName = "KaiTi_GB2312 (TrueType)";
-    private static readonly (string Name, string[] Aliases)[] RequiredFonts =
+    private static readonly (string Name, string[] Aliases, string Usage)[] RequiredFonts =
     [
-        ("宋体", ["宋体", "SimSun"]), // 常规中文正文和图表题。
-        ("黑体", ["黑体", "SimHei"]), // 各级标题。
-        ("仿宋", ["仿宋", "FangSong"]), // 致谢正文。
-        ("Arial", ["Arial"]), // 原规范指定的英文摘要标题。
-        ("Times New Roman", ["Times New Roman"]), // 西文正文与英文封面。
-        ("华文行楷", ["华文行楷", "STXingkai"]), // 封面校名。
-        ("楷体_GB2312", ["楷体_GB2312", "KaiTi_GB2312"]) // 按实际字库内容单独核验。
+        ("宋体", ["宋体", "SimSun"], "正文、目录条目、图表题、附属正文、中文页眉与页码"), // 常规中文正文和图表题。
+        ("黑体", ["黑体", "SimHei"], "四级标题、中文摘要标题、目录标题与封面学位名称"), // 各级标题。
+        ("仿宋", ["仿宋", "FangSong"], "致谢正文"), // 致谢正文。
+        ("Arial", ["Arial"], "英文摘要标题"), // 原规范指定的英文摘要标题。
+        ("Times New Roman", ["Times New Roman"], "西文正文、英文封面与英文页眉"), // 西文正文与英文封面。
+        ("华文行楷", ["华文行楷", "STXingkai"], "封面校名"), // 封面校名。
+        ("楷体_GB2312", ["楷体_GB2312", "KaiTi_GB2312"], "封面信息与论文题目") // 按实际字库内容单独核验。
     ];
 
     /// <summary>枚举字体并核验中文楷体名称实际选中的字库；不改变任何配置。</summary>
@@ -49,7 +49,7 @@ public static class FontService
             if (required.Name != "楷体_GB2312")
             {
                 result.Add(new FontStatus(required.Name, available, available,
-                    available ? "已找到字体家族。" : "缺少字体；相关样式可能由 Word 代替显示。"));
+                    available ? "已找到字体家族。用于：" + required.Usage + "。" : "缺少字体；受影响样式：" + required.Usage + "。Word 可能使用替代字体。"));
                 continue;
             }
 
@@ -58,11 +58,11 @@ public static class FontService
                 var selected = ReadSelectedFont("楷体_GB2312"); // 使用模板实际采用的中文名称。
                 bool matches = selected.Sha256 == VerifiedKaiTiSha256; // 名称相同并不代表没有字体替代。
                 result.Add(new FontStatus(required.Name, available || matches, matches,
-                    matches ? "中文家族名实际选中的字库与已核验版本一致。" : "未选中已核验的楷体_GB2312 字库；封面字体尚未验收。"));
+                    matches ? "中文家族名实际选中的字库与已核验版本一致。用于：" + required.Usage + "。" : "未选中已核验的楷体_GB2312 字库；受影响样式：" + required.Usage + "，封面字体尚未验收。"));
             }
             catch (Exception error)
             {
-                result.Add(new FontStatus(required.Name, available, false, "无法核验实际字库：" + error.Message));
+                result.Add(new FontStatus(required.Name, available, false, "无法核验实际字库：" + error.Message + "；受影响样式：" + required.Usage + "。"));
             }
         }
         return result; // 缺少字体不触发下载、替代或安装。

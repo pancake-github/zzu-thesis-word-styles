@@ -19,6 +19,7 @@ public sealed class VerificationReport
     public bool Success { get; set; } // 两轮启动的所有检查均通过时为真。
     public string WordVersion { get; set; } = "未知"; // 通过 Word 自动化读取的版本。
     public string OfficeBitness { get; set; } = "未知"; // 当前 Office 的注册架构。
+    public List<string> QuickStyles { get; set; } = []; // 记录 Word 实际返回的名称，便于检查别名显示与本地化。
     public List<string> Messages { get; set; } = []; // 不含论文正文的验收说明。
 }
 
