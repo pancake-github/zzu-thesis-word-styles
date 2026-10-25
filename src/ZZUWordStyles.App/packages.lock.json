@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "dependencies": {
+    "net10.0-windows7.0": {
+      "zzuwordstyles.core": {
+        "type": "Project"
+      },
+      "zzuwordstyles.windows": {
+        "type": "Project"
+      }
+    }
+  }
+}

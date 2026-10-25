@@ -1,0 +1,4240 @@
+{
+  "schemaVersion": 1,
+  "version": "0.1.0-beta.1",
+  "source": {
+    "title": "郑州大学研究生学位论文写作规范",
+    "schoolPublished": "2024-04-25",
+    "documentDate": "2023-09",
+    "url": "https://gs3.zzu.edu.cn/info/1045/13029.htm",
+    "sha256": "cdf8f1d47fe0331ed0469d852acd36f257c7973dc3cec29474cc73dfae7949d4"
+  },
+  "scope": "文字与段落样式；不安装页面布局、分节、页眉内容或自动标题编号。",
+  "quickStyleIds": [
+    "Normal",
+    "Heading1",
+    "Heading2",
+    "Heading3",
+    "Heading4",
+    "中文摘要标题",
+    "英文摘要标题",
+    "TOCHeading",
+    "图题",
+    "表题",
+    "附属正文",
+    "致谢正文"
+  ],
+  "styles": [
+    {
+      "id": "Normal",
+      "name": "Normal",
+      "type": "paragraph",
+      "usage": "正文、附录正文、中英文摘要正文",
+      "quick": true,
+      "priority": "1",
+      "fonts": {
+        "ascii": "Times New Roman",
+        "hAnsi": "Times New Roman",
+        "eastAsia": "宋体",
+        "cs": "Times New Roman"
+      },
+      "sizePt": 12.0,
+      "bold": false,
+      "basedOn": null,
+      "next": null,
+      "alignment": "both",
+      "spacingRaw": {
+        "before": "0",
+        "after": "0",
+        "lineRule": "exact",
+        "line": "400"
+      },
+      "indentRaw": {
+        "left": "0",
+        "right": "0",
+        "firstLine": "0",
+        "leftChars": "0",
+        "rightChars": "0",
+        "firstLineChars": "200"
+      },
+      "outlineLevel": "9",
+      "pageBreakBefore": false,
+      "keepNext": false,
+      "characterProperties": {
+        "tag": "rPr",
+        "attributes": {},
+        "children": [
+          {
+            "tag": "rFonts",
+            "attributes": {
+              "ascii": "Times New Roman",
+              "hAnsi": "Times New Roman",
+              "eastAsia": "宋体",
+              "cs": "Times New Roman"
+            },
+            "children": []
+          },
+          {
+            "tag": "sz",
+            "attributes": {
+              "val": "24"
+            },
+            "children": []
+          },
+          {
+            "tag": "szCs",
+            "attributes": {
+              "val": "24"
+            },
+            "children": []
+          },
+          {
+            "tag": "b",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "bCs",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "i",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "iCs",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "color",
+            "attributes": {
+              "val": "000000"
+            },
+            "children": []
+          }
+        ]
+      },
+      "paragraphProperties": {
+        "tag": "pPr",
+        "attributes": {},
+        "children": [
+          {
+            "tag": "keepNext",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "keepLines",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "pageBreakBefore",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "widowControl",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "spacing",
+            "attributes": {
+              "before": "0",
+              "after": "0",
+              "lineRule": "exact",
+              "line": "400"
+            },
+            "children": []
+          },
+          {
+            "tag": "jc",
+            "attributes": {
+              "val": "both"
+            },
+            "children": []
+          },
+          {
+            "tag": "ind",
+            "attributes": {
+              "left": "0",
+              "right": "0",
+              "firstLine": "0",
+              "leftChars": "0",
+              "rightChars": "0",
+              "firstLineChars": "200"
+            },
+            "children": []
+          },
+          {
+            "tag": "outlineLvl",
+            "attributes": {
+              "val": "9"
+            },
+            "children": []
+          },
+          {
+            "tag": "snapToGrid",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "contextualSpacing",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          }
+        ]
+      },
+      "provenanceNotes": [
+        "未在规范中单独明确的实现参数见 docs/样式对照表.md；不把完整属性树全部宣称为学校规定。",
+        "中英文摘要正文采用正文的两端对齐、首行缩进 2 字符，为已确认补充默认值。"
+      ]
+    },
+    {
+      "id": "Heading1",
+      "name": "heading 1",
+      "type": "paragraph",
+      "usage": "一级标题",
+      "quick": true,
+      "priority": "2",
+      "fonts": {
+        "ascii": "黑体",
+        "hAnsi": "黑体",
+        "eastAsia": "黑体",
+        "cs": "黑体"
+      },
+      "sizePt": 16.0,
+      "bold": false,
+      "basedOn": "Normal",
+      "next": "Normal",
+      "alignment": "left",
+      "spacingRaw": {
+        "before": "480",
+        "after": "360",
+        "lineRule": "exact",
+        "line": "400"
+      },
+      "indentRaw": {
+        "left": "0",
+        "right": "0",
+        "firstLine": "0",
+        "leftChars": "0",
+        "rightChars": "0",
+        "firstLineChars": "0"
+      },
+      "outlineLevel": "0",
+      "pageBreakBefore": true,
+      "keepNext": true,
+      "characterProperties": {
+        "tag": "rPr",
+        "attributes": {},
+        "children": [
+          {
+            "tag": "rFonts",
+            "attributes": {
+              "ascii": "黑体",
+              "hAnsi": "黑体",
+              "eastAsia": "黑体",
+              "cs": "黑体"
+            },
+            "children": []
+          },
+          {
+            "tag": "sz",
+            "attributes": {
+              "val": "32"
+            },
+            "children": []
+          },
+          {
+            "tag": "szCs",
+            "attributes": {
+              "val": "32"
+            },
+            "children": []
+          },
+          {
+            "tag": "b",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "bCs",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "i",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "iCs",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "color",
+            "attributes": {
+              "val": "000000"
+            },
+            "children": []
+          }
+        ]
+      },
+      "paragraphProperties": {
+        "tag": "pPr",
+        "attributes": {},
+        "children": [
+          {
+            "tag": "keepNext",
+            "attributes": {},
+            "children": []
+          },
+          {
+            "tag": "keepLines",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "pageBreakBefore",
+            "attributes": {},
+            "children": []
+          },
+          {
+            "tag": "widowControl",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "spacing",
+            "attributes": {
+              "before": "480",
+              "after": "360",
+              "lineRule": "exact",
+              "line": "400"
+            },
+            "children": []
+          },
+          {
+            "tag": "jc",
+            "attributes": {
+              "val": "left"
+            },
+            "children": []
+          },
+          {
+            "tag": "ind",
+            "attributes": {
+              "left": "0",
+              "right": "0",
+              "firstLine": "0",
+              "leftChars": "0",
+              "rightChars": "0",
+              "firstLineChars": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "outlineLvl",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "snapToGrid",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "contextualSpacing",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          }
+        ]
+      },
+      "provenanceNotes": [
+        "未在规范中单独明确的实现参数见 docs/样式对照表.md；不把完整属性树全部宣称为学校规定。"
+      ]
+    },
+    {
+      "id": "Heading2",
+      "name": "heading 2",
+      "type": "paragraph",
+      "usage": "二级标题",
+      "quick": true,
+      "priority": "3",
+      "fonts": {
+        "ascii": "黑体",
+        "hAnsi": "黑体",
+        "eastAsia": "黑体",
+        "cs": "黑体"
+      },
+      "sizePt": 14.0,
+      "bold": false,
+      "basedOn": "Normal",
+      "next": "Normal",
+      "alignment": "left",
+      "spacingRaw": {
+        "before": "480",
+        "after": "120",
+        "lineRule": "exact",
+        "line": "400"
+      },
+      "indentRaw": {
+        "left": "0",
+        "right": "0",
+        "firstLine": "0",
+        "leftChars": "0",
+        "rightChars": "0",
+        "firstLineChars": "0"
+      },
+      "outlineLevel": "1",
+      "pageBreakBefore": false,
+      "keepNext": true,
+      "characterProperties": {
+        "tag": "rPr",
+        "attributes": {},
+        "children": [
+          {
+            "tag": "rFonts",
+            "attributes": {
+              "ascii": "黑体",
+              "hAnsi": "黑体",
+              "eastAsia": "黑体",
+              "cs": "黑体"
+            },
+            "children": []
+          },
+          {
+            "tag": "sz",
+            "attributes": {
+              "val": "28"
+            },
+            "children": []
+          },
+          {
+            "tag": "szCs",
+            "attributes": {
+              "val": "28"
+            },
+            "children": []
+          },
+          {
+            "tag": "b",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "bCs",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "i",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "iCs",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "color",
+            "attributes": {
+              "val": "000000"
+            },
+            "children": []
+          }
+        ]
+      },
+      "paragraphProperties": {
+        "tag": "pPr",
+        "attributes": {},
+        "children": [
+          {
+            "tag": "keepNext",
+            "attributes": {},
+            "children": []
+          },
+          {
+            "tag": "keepLines",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "pageBreakBefore",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "widowControl",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "spacing",
+            "attributes": {
+              "before": "480",
+              "after": "120",
+              "lineRule": "exact",
+              "line": "400"
+            },
+            "children": []
+          },
+          {
+            "tag": "jc",
+            "attributes": {
+              "val": "left"
+            },
+            "children": []
+          },
+          {
+            "tag": "ind",
+            "attributes": {
+              "left": "0",
+              "right": "0",
+              "firstLine": "0",
+              "leftChars": "0",
+              "rightChars": "0",
+              "firstLineChars": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "outlineLvl",
+            "attributes": {
+              "val": "1"
+            },
+            "children": []
+          },
+          {
+            "tag": "snapToGrid",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "contextualSpacing",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          }
+        ]
+      },
+      "provenanceNotes": [
+        "未在规范中单独明确的实现参数见 docs/样式对照表.md；不把完整属性树全部宣称为学校规定。"
+      ]
+    },
+    {
+      "id": "Heading3",
+      "name": "heading 3",
+      "type": "paragraph",
+      "usage": "三级标题",
+      "quick": true,
+      "priority": "4",
+      "fonts": {
+        "ascii": "黑体",
+        "hAnsi": "黑体",
+        "eastAsia": "黑体",
+        "cs": "黑体"
+      },
+      "sizePt": 13.0,
+      "bold": false,
+      "basedOn": "Normal",
+      "next": "Normal",
+      "alignment": "left",
+      "spacingRaw": {
+        "before": "240",
+        "after": "120",
+        "lineRule": "exact",
+        "line": "400"
+      },
+      "indentRaw": {
+        "left": "0",
+        "right": "0",
+        "firstLine": "0",
+        "leftChars": "0",
+        "rightChars": "0",
+        "firstLineChars": "0"
+      },
+      "outlineLevel": "2",
+      "pageBreakBefore": false,
+      "keepNext": true,
+      "characterProperties": {
+        "tag": "rPr",
+        "attributes": {},
+        "children": [
+          {
+            "tag": "rFonts",
+            "attributes": {
+              "ascii": "黑体",
+              "hAnsi": "黑体",
+              "eastAsia": "黑体",
+              "cs": "黑体"
+            },
+            "children": []
+          },
+          {
+            "tag": "sz",
+            "attributes": {
+              "val": "26"
+            },
+            "children": []
+          },
+          {
+            "tag": "szCs",
+            "attributes": {
+              "val": "26"
+            },
+            "children": []
+          },
+          {
+            "tag": "b",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "bCs",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "i",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "iCs",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "color",
+            "attributes": {
+              "val": "000000"
+            },
+            "children": []
+          }
+        ]
+      },
+      "paragraphProperties": {
+        "tag": "pPr",
+        "attributes": {},
+        "children": [
+          {
+            "tag": "keepNext",
+            "attributes": {},
+            "children": []
+          },
+          {
+            "tag": "keepLines",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "pageBreakBefore",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "widowControl",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "spacing",
+            "attributes": {
+              "before": "240",
+              "after": "120",
+              "lineRule": "exact",
+              "line": "400"
+            },
+            "children": []
+          },
+          {
+            "tag": "jc",
+            "attributes": {
+              "val": "left"
+            },
+            "children": []
+          },
+          {
+            "tag": "ind",
+            "attributes": {
+              "left": "0",
+              "right": "0",
+              "firstLine": "0",
+              "leftChars": "0",
+              "rightChars": "0",
+              "firstLineChars": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "outlineLvl",
+            "attributes": {
+              "val": "2"
+            },
+            "children": []
+          },
+          {
+            "tag": "snapToGrid",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "contextualSpacing",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          }
+        ]
+      },
+      "provenanceNotes": [
+        "未在规范中单独明确的实现参数见 docs/样式对照表.md；不把完整属性树全部宣称为学校规定。"
+      ]
+    },
+    {
+      "id": "Heading4",
+      "name": "heading 4",
+      "type": "paragraph",
+      "usage": "四级标题",
+      "quick": true,
+      "priority": "5",
+      "fonts": {
+        "ascii": "黑体",
+        "hAnsi": "黑体",
+        "eastAsia": "黑体",
+        "cs": "黑体"
+      },
+      "sizePt": 12.0,
+      "bold": false,
+      "basedOn": "Normal",
+      "next": "Normal",
+      "alignment": "left",
+      "spacingRaw": {
+        "before": "240",
+        "after": "120",
+        "lineRule": "exact",
+        "line": "400"
+      },
+      "indentRaw": {
+        "left": "0",
+        "right": "0",
+        "firstLine": "0",
+        "leftChars": "0",
+        "rightChars": "0",
+        "firstLineChars": "0"
+      },
+      "outlineLevel": "3",
+      "pageBreakBefore": false,
+      "keepNext": true,
+      "characterProperties": {
+        "tag": "rPr",
+        "attributes": {},
+        "children": [
+          {
+            "tag": "rFonts",
+            "attributes": {
+              "ascii": "黑体",
+              "hAnsi": "黑体",
+              "eastAsia": "黑体",
+              "cs": "黑体"
+            },
+            "children": []
+          },
+          {
+            "tag": "sz",
+            "attributes": {
+              "val": "24"
+            },
+            "children": []
+          },
+          {
+            "tag": "szCs",
+            "attributes": {
+              "val": "24"
+            },
+            "children": []
+          },
+          {
+            "tag": "b",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "bCs",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "i",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "iCs",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "color",
+            "attributes": {
+              "val": "000000"
+            },
+            "children": []
+          }
+        ]
+      },
+      "paragraphProperties": {
+        "tag": "pPr",
+        "attributes": {},
+        "children": [
+          {
+            "tag": "keepNext",
+            "attributes": {},
+            "children": []
+          },
+          {
+            "tag": "keepLines",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "pageBreakBefore",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "widowControl",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "spacing",
+            "attributes": {
+              "before": "240",
+              "after": "120",
+              "lineRule": "exact",
+              "line": "400"
+            },
+            "children": []
+          },
+          {
+            "tag": "jc",
+            "attributes": {
+              "val": "left"
+            },
+            "children": []
+          },
+          {
+            "tag": "ind",
+            "attributes": {
+              "left": "0",
+              "right": "0",
+              "firstLine": "0",
+              "leftChars": "0",
+              "rightChars": "0",
+              "firstLineChars": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "outlineLvl",
+            "attributes": {
+              "val": "3"
+            },
+            "children": []
+          },
+          {
+            "tag": "snapToGrid",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "contextualSpacing",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          }
+        ]
+      },
+      "provenanceNotes": [
+        "未在规范中单独明确的实现参数见 docs/样式对照表.md；不把完整属性树全部宣称为学校规定。"
+      ]
+    },
+    {
+      "id": "中文摘要标题",
+      "name": "中文摘要标题",
+      "type": "paragraph",
+      "usage": "中文摘要标题",
+      "quick": true,
+      "priority": "6",
+      "fonts": {
+        "ascii": "黑体",
+        "hAnsi": "黑体",
+        "eastAsia": "黑体",
+        "cs": "黑体"
+      },
+      "sizePt": 18.0,
+      "bold": true,
+      "basedOn": "Normal",
+      "next": "Normal",
+      "alignment": "center",
+      "spacingRaw": {
+        "before": "480",
+        "after": "360",
+        "line": "240",
+        "lineRule": "auto"
+      },
+      "indentRaw": {
+        "left": "0",
+        "right": "0",
+        "firstLine": "0",
+        "leftChars": "0",
+        "rightChars": "0",
+        "firstLineChars": "0"
+      },
+      "outlineLevel": "9",
+      "pageBreakBefore": true,
+      "keepNext": true,
+      "characterProperties": {
+        "tag": "rPr",
+        "attributes": {},
+        "children": [
+          {
+            "tag": "rFonts",
+            "attributes": {
+              "ascii": "黑体",
+              "hAnsi": "黑体",
+              "eastAsia": "黑体",
+              "cs": "黑体"
+            },
+            "children": []
+          },
+          {
+            "tag": "sz",
+            "attributes": {
+              "val": "36"
+            },
+            "children": []
+          },
+          {
+            "tag": "szCs",
+            "attributes": {
+              "val": "36"
+            },
+            "children": []
+          },
+          {
+            "tag": "b",
+            "attributes": {
+              "val": "1"
+            },
+            "children": []
+          },
+          {
+            "tag": "bCs",
+            "attributes": {
+              "val": "1"
+            },
+            "children": []
+          },
+          {
+            "tag": "i",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "iCs",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "color",
+            "attributes": {
+              "val": "000000"
+            },
+            "children": []
+          }
+        ]
+      },
+      "paragraphProperties": {
+        "tag": "pPr",
+        "attributes": {},
+        "children": [
+          {
+            "tag": "keepNext",
+            "attributes": {},
+            "children": []
+          },
+          {
+            "tag": "keepLines",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "pageBreakBefore",
+            "attributes": {},
+            "children": []
+          },
+          {
+            "tag": "widowControl",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "spacing",
+            "attributes": {
+              "before": "480",
+              "after": "360",
+              "line": "240",
+              "lineRule": "auto"
+            },
+            "children": []
+          },
+          {
+            "tag": "jc",
+            "attributes": {
+              "val": "center"
+            },
+            "children": []
+          },
+          {
+            "tag": "ind",
+            "attributes": {
+              "left": "0",
+              "right": "0",
+              "firstLine": "0",
+              "leftChars": "0",
+              "rightChars": "0",
+              "firstLineChars": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "outlineLvl",
+            "attributes": {
+              "val": "9"
+            },
+            "children": []
+          },
+          {
+            "tag": "snapToGrid",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "contextualSpacing",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          }
+        ]
+      },
+      "provenanceNotes": [
+        "未在规范中单独明确的实现参数见 docs/样式对照表.md；不把完整属性树全部宣称为学校规定。"
+      ]
+    },
+    {
+      "id": "英文摘要标题",
+      "name": "英文摘要标题",
+      "type": "paragraph",
+      "usage": "英文摘要标题",
+      "quick": true,
+      "priority": "7",
+      "fonts": {
+        "ascii": "Arial",
+        "hAnsi": "Arial",
+        "eastAsia": "Arial",
+        "cs": "Arial"
+      },
+      "sizePt": 18.0,
+      "bold": true,
+      "basedOn": "Normal",
+      "next": "Normal",
+      "alignment": "center",
+      "spacingRaw": {
+        "before": "480",
+        "after": "360",
+        "line": "240",
+        "lineRule": "auto"
+      },
+      "indentRaw": {
+        "left": "0",
+        "right": "0",
+        "firstLine": "0",
+        "leftChars": "0",
+        "rightChars": "0",
+        "firstLineChars": "0"
+      },
+      "outlineLevel": "9",
+      "pageBreakBefore": true,
+      "keepNext": true,
+      "characterProperties": {
+        "tag": "rPr",
+        "attributes": {},
+        "children": [
+          {
+            "tag": "rFonts",
+            "attributes": {
+              "ascii": "Arial",
+              "hAnsi": "Arial",
+              "eastAsia": "Arial",
+              "cs": "Arial"
+            },
+            "children": []
+          },
+          {
+            "tag": "sz",
+            "attributes": {
+              "val": "36"
+            },
+            "children": []
+          },
+          {
+            "tag": "szCs",
+            "attributes": {
+              "val": "36"
+            },
+            "children": []
+          },
+          {
+            "tag": "b",
+            "attributes": {
+              "val": "1"
+            },
+            "children": []
+          },
+          {
+            "tag": "bCs",
+            "attributes": {
+              "val": "1"
+            },
+            "children": []
+          },
+          {
+            "tag": "i",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "iCs",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "color",
+            "attributes": {
+              "val": "000000"
+            },
+            "children": []
+          }
+        ]
+      },
+      "paragraphProperties": {
+        "tag": "pPr",
+        "attributes": {},
+        "children": [
+          {
+            "tag": "keepNext",
+            "attributes": {},
+            "children": []
+          },
+          {
+            "tag": "keepLines",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "pageBreakBefore",
+            "attributes": {},
+            "children": []
+          },
+          {
+            "tag": "widowControl",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "spacing",
+            "attributes": {
+              "before": "480",
+              "after": "360",
+              "line": "240",
+              "lineRule": "auto"
+            },
+            "children": []
+          },
+          {
+            "tag": "jc",
+            "attributes": {
+              "val": "center"
+            },
+            "children": []
+          },
+          {
+            "tag": "ind",
+            "attributes": {
+              "left": "0",
+              "right": "0",
+              "firstLine": "0",
+              "leftChars": "0",
+              "rightChars": "0",
+              "firstLineChars": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "outlineLvl",
+            "attributes": {
+              "val": "9"
+            },
+            "children": []
+          },
+          {
+            "tag": "snapToGrid",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "contextualSpacing",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          }
+        ]
+      },
+      "provenanceNotes": [
+        "未在规范中单独明确的实现参数见 docs/样式对照表.md；不把完整属性树全部宣称为学校规定。"
+      ]
+    },
+    {
+      "id": "TOCHeading",
+      "name": "TOC Heading",
+      "type": "paragraph",
+      "usage": "目录标题",
+      "quick": true,
+      "priority": "8",
+      "fonts": {
+        "ascii": "黑体",
+        "hAnsi": "黑体",
+        "eastAsia": "黑体",
+        "cs": "黑体"
+      },
+      "sizePt": 16.0,
+      "bold": true,
+      "basedOn": "Normal",
+      "next": "Normal",
+      "alignment": "center",
+      "spacingRaw": {
+        "before": "480",
+        "after": "360",
+        "line": "240",
+        "lineRule": "auto"
+      },
+      "indentRaw": {
+        "left": "0",
+        "right": "0",
+        "firstLine": "0",
+        "leftChars": "0",
+        "rightChars": "0",
+        "firstLineChars": "0"
+      },
+      "outlineLevel": "9",
+      "pageBreakBefore": true,
+      "keepNext": true,
+      "characterProperties": {
+        "tag": "rPr",
+        "attributes": {},
+        "children": [
+          {
+            "tag": "rFonts",
+            "attributes": {
+              "ascii": "黑体",
+              "hAnsi": "黑体",
+              "eastAsia": "黑体",
+              "cs": "黑体"
+            },
+            "children": []
+          },
+          {
+            "tag": "sz",
+            "attributes": {
+              "val": "32"
+            },
+            "children": []
+          },
+          {
+            "tag": "szCs",
+            "attributes": {
+              "val": "32"
+            },
+            "children": []
+          },
+          {
+            "tag": "b",
+            "attributes": {
+              "val": "1"
+            },
+            "children": []
+          },
+          {
+            "tag": "bCs",
+            "attributes": {
+              "val": "1"
+            },
+            "children": []
+          },
+          {
+            "tag": "i",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "iCs",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "color",
+            "attributes": {
+              "val": "000000"
+            },
+            "children": []
+          }
+        ]
+      },
+      "paragraphProperties": {
+        "tag": "pPr",
+        "attributes": {},
+        "children": [
+          {
+            "tag": "keepNext",
+            "attributes": {},
+            "children": []
+          },
+          {
+            "tag": "keepLines",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "pageBreakBefore",
+            "attributes": {},
+            "children": []
+          },
+          {
+            "tag": "widowControl",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "spacing",
+            "attributes": {
+              "before": "480",
+              "after": "360",
+              "line": "240",
+              "lineRule": "auto"
+            },
+            "children": []
+          },
+          {
+            "tag": "jc",
+            "attributes": {
+              "val": "center"
+            },
+            "children": []
+          },
+          {
+            "tag": "ind",
+            "attributes": {
+              "left": "0",
+              "right": "0",
+              "firstLine": "0",
+              "leftChars": "0",
+              "rightChars": "0",
+              "firstLineChars": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "outlineLvl",
+            "attributes": {
+              "val": "9"
+            },
+            "children": []
+          },
+          {
+            "tag": "snapToGrid",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "contextualSpacing",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          }
+        ]
+      },
+      "provenanceNotes": [
+        "未在规范中单独明确的实现参数见 docs/样式对照表.md；不把完整属性树全部宣称为学校规定。"
+      ]
+    },
+    {
+      "id": "图题",
+      "name": "图题",
+      "type": "paragraph",
+      "usage": "图题",
+      "quick": true,
+      "priority": "9",
+      "fonts": {
+        "ascii": "宋体",
+        "hAnsi": "宋体",
+        "eastAsia": "宋体",
+        "cs": "宋体"
+      },
+      "sizePt": 10.5,
+      "bold": false,
+      "basedOn": "Normal",
+      "next": "Normal",
+      "alignment": "center",
+      "spacingRaw": {
+        "before": "120",
+        "after": "240",
+        "line": "240",
+        "lineRule": "auto"
+      },
+      "indentRaw": {
+        "left": "0",
+        "right": "0",
+        "firstLine": "0",
+        "leftChars": "0",
+        "rightChars": "0",
+        "firstLineChars": "0"
+      },
+      "outlineLevel": "9",
+      "pageBreakBefore": false,
+      "keepNext": false,
+      "characterProperties": {
+        "tag": "rPr",
+        "attributes": {},
+        "children": [
+          {
+            "tag": "rFonts",
+            "attributes": {
+              "ascii": "宋体",
+              "hAnsi": "宋体",
+              "eastAsia": "宋体",
+              "cs": "宋体"
+            },
+            "children": []
+          },
+          {
+            "tag": "sz",
+            "attributes": {
+              "val": "21"
+            },
+            "children": []
+          },
+          {
+            "tag": "szCs",
+            "attributes": {
+              "val": "21"
+            },
+            "children": []
+          },
+          {
+            "tag": "b",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "bCs",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "i",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "iCs",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "color",
+            "attributes": {
+              "val": "000000"
+            },
+            "children": []
+          }
+        ]
+      },
+      "paragraphProperties": {
+        "tag": "pPr",
+        "attributes": {},
+        "children": [
+          {
+            "tag": "keepNext",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "keepLines",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "pageBreakBefore",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "widowControl",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "spacing",
+            "attributes": {
+              "before": "120",
+              "after": "240",
+              "line": "240",
+              "lineRule": "auto"
+            },
+            "children": []
+          },
+          {
+            "tag": "jc",
+            "attributes": {
+              "val": "center"
+            },
+            "children": []
+          },
+          {
+            "tag": "ind",
+            "attributes": {
+              "left": "0",
+              "right": "0",
+              "firstLine": "0",
+              "leftChars": "0",
+              "rightChars": "0",
+              "firstLineChars": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "outlineLvl",
+            "attributes": {
+              "val": "9"
+            },
+            "children": []
+          },
+          {
+            "tag": "snapToGrid",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "contextualSpacing",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          }
+        ]
+      },
+      "provenanceNotes": [
+        "未在规范中单独明确的实现参数见 docs/样式对照表.md；不把完整属性树全部宣称为学校规定。"
+      ]
+    },
+    {
+      "id": "表题",
+      "name": "表题",
+      "type": "paragraph",
+      "usage": "表题",
+      "quick": true,
+      "priority": "10",
+      "fonts": {
+        "ascii": "宋体",
+        "hAnsi": "宋体",
+        "eastAsia": "宋体",
+        "cs": "宋体"
+      },
+      "sizePt": 10.5,
+      "bold": false,
+      "basedOn": "Normal",
+      "next": "Normal",
+      "alignment": "center",
+      "spacingRaw": {
+        "before": "120",
+        "after": "120",
+        "line": "240",
+        "lineRule": "auto"
+      },
+      "indentRaw": {
+        "left": "0",
+        "right": "0",
+        "firstLine": "0",
+        "leftChars": "0",
+        "rightChars": "0",
+        "firstLineChars": "0"
+      },
+      "outlineLevel": "9",
+      "pageBreakBefore": false,
+      "keepNext": true,
+      "characterProperties": {
+        "tag": "rPr",
+        "attributes": {},
+        "children": [
+          {
+            "tag": "rFonts",
+            "attributes": {
+              "ascii": "宋体",
+              "hAnsi": "宋体",
+              "eastAsia": "宋体",
+              "cs": "宋体"
+            },
+            "children": []
+          },
+          {
+            "tag": "sz",
+            "attributes": {
+              "val": "21"
+            },
+            "children": []
+          },
+          {
+            "tag": "szCs",
+            "attributes": {
+              "val": "21"
+            },
+            "children": []
+          },
+          {
+            "tag": "b",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "bCs",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "i",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "iCs",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "color",
+            "attributes": {
+              "val": "000000"
+            },
+            "children": []
+          }
+        ]
+      },
+      "paragraphProperties": {
+        "tag": "pPr",
+        "attributes": {},
+        "children": [
+          {
+            "tag": "keepNext",
+            "attributes": {},
+            "children": []
+          },
+          {
+            "tag": "keepLines",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "pageBreakBefore",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "widowControl",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "spacing",
+            "attributes": {
+              "before": "120",
+              "after": "120",
+              "line": "240",
+              "lineRule": "auto"
+            },
+            "children": []
+          },
+          {
+            "tag": "jc",
+            "attributes": {
+              "val": "center"
+            },
+            "children": []
+          },
+          {
+            "tag": "ind",
+            "attributes": {
+              "left": "0",
+              "right": "0",
+              "firstLine": "0",
+              "leftChars": "0",
+              "rightChars": "0",
+              "firstLineChars": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "outlineLvl",
+            "attributes": {
+              "val": "9"
+            },
+            "children": []
+          },
+          {
+            "tag": "snapToGrid",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "contextualSpacing",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          }
+        ]
+      },
+      "provenanceNotes": [
+        "未在规范中单独明确的实现参数见 docs/样式对照表.md；不把完整属性树全部宣称为学校规定。"
+      ]
+    },
+    {
+      "id": "附属正文",
+      "name": "附属正文",
+      "type": "paragraph",
+      "usage": "参考文献、符号说明、个人简历及成果",
+      "quick": true,
+      "priority": "11",
+      "fonts": {
+        "ascii": "Times New Roman",
+        "hAnsi": "Times New Roman",
+        "eastAsia": "宋体",
+        "cs": "Times New Roman"
+      },
+      "sizePt": 10.5,
+      "bold": false,
+      "basedOn": "Normal",
+      "next": "Normal",
+      "alignment": "both",
+      "spacingRaw": {
+        "before": "0",
+        "after": "0",
+        "lineRule": "exact",
+        "line": "320"
+      },
+      "indentRaw": {
+        "left": "0",
+        "right": "0",
+        "firstLine": "0",
+        "leftChars": "0",
+        "rightChars": "0",
+        "firstLineChars": "0"
+      },
+      "outlineLevel": "9",
+      "pageBreakBefore": false,
+      "keepNext": false,
+      "characterProperties": {
+        "tag": "rPr",
+        "attributes": {},
+        "children": [
+          {
+            "tag": "rFonts",
+            "attributes": {
+              "ascii": "Times New Roman",
+              "hAnsi": "Times New Roman",
+              "eastAsia": "宋体",
+              "cs": "Times New Roman"
+            },
+            "children": []
+          },
+          {
+            "tag": "sz",
+            "attributes": {
+              "val": "21"
+            },
+            "children": []
+          },
+          {
+            "tag": "szCs",
+            "attributes": {
+              "val": "21"
+            },
+            "children": []
+          },
+          {
+            "tag": "b",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "bCs",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "i",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "iCs",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "color",
+            "attributes": {
+              "val": "000000"
+            },
+            "children": []
+          }
+        ]
+      },
+      "paragraphProperties": {
+        "tag": "pPr",
+        "attributes": {},
+        "children": [
+          {
+            "tag": "keepNext",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "keepLines",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "pageBreakBefore",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "widowControl",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "spacing",
+            "attributes": {
+              "before": "0",
+              "after": "0",
+              "lineRule": "exact",
+              "line": "320"
+            },
+            "children": []
+          },
+          {
+            "tag": "jc",
+            "attributes": {
+              "val": "both"
+            },
+            "children": []
+          },
+          {
+            "tag": "ind",
+            "attributes": {
+              "left": "0",
+              "right": "0",
+              "firstLine": "0",
+              "leftChars": "0",
+              "rightChars": "0",
+              "firstLineChars": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "outlineLvl",
+            "attributes": {
+              "val": "9"
+            },
+            "children": []
+          },
+          {
+            "tag": "snapToGrid",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "contextualSpacing",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          }
+        ]
+      },
+      "provenanceNotes": [
+        "未在规范中单独明确的实现参数见 docs/样式对照表.md；不把完整属性树全部宣称为学校规定。",
+        "两端对齐、首行缩进 0 字符，为已确认补充默认值。"
+      ]
+    },
+    {
+      "id": "致谢正文",
+      "name": "致谢正文",
+      "type": "paragraph",
+      "usage": "致谢正文",
+      "quick": true,
+      "priority": "12",
+      "fonts": {
+        "ascii": "仿宋",
+        "hAnsi": "仿宋",
+        "eastAsia": "仿宋",
+        "cs": "仿宋"
+      },
+      "sizePt": 12.0,
+      "bold": false,
+      "basedOn": "Normal",
+      "next": "Normal",
+      "alignment": "both",
+      "spacingRaw": {
+        "before": "0",
+        "after": "0",
+        "lineRule": "exact",
+        "line": "320"
+      },
+      "indentRaw": {
+        "left": "0",
+        "right": "0",
+        "firstLine": "0",
+        "leftChars": "0",
+        "rightChars": "0",
+        "firstLineChars": "200"
+      },
+      "outlineLevel": "9",
+      "pageBreakBefore": false,
+      "keepNext": false,
+      "characterProperties": {
+        "tag": "rPr",
+        "attributes": {},
+        "children": [
+          {
+            "tag": "rFonts",
+            "attributes": {
+              "ascii": "仿宋",
+              "hAnsi": "仿宋",
+              "eastAsia": "仿宋",
+              "cs": "仿宋"
+            },
+            "children": []
+          },
+          {
+            "tag": "sz",
+            "attributes": {
+              "val": "24"
+            },
+            "children": []
+          },
+          {
+            "tag": "szCs",
+            "attributes": {
+              "val": "24"
+            },
+            "children": []
+          },
+          {
+            "tag": "b",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "bCs",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "i",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "iCs",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "color",
+            "attributes": {
+              "val": "000000"
+            },
+            "children": []
+          }
+        ]
+      },
+      "paragraphProperties": {
+        "tag": "pPr",
+        "attributes": {},
+        "children": [
+          {
+            "tag": "keepNext",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "keepLines",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "pageBreakBefore",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "widowControl",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "spacing",
+            "attributes": {
+              "before": "0",
+              "after": "0",
+              "lineRule": "exact",
+              "line": "320"
+            },
+            "children": []
+          },
+          {
+            "tag": "jc",
+            "attributes": {
+              "val": "both"
+            },
+            "children": []
+          },
+          {
+            "tag": "ind",
+            "attributes": {
+              "left": "0",
+              "right": "0",
+              "firstLine": "0",
+              "leftChars": "0",
+              "rightChars": "0",
+              "firstLineChars": "200"
+            },
+            "children": []
+          },
+          {
+            "tag": "outlineLvl",
+            "attributes": {
+              "val": "9"
+            },
+            "children": []
+          },
+          {
+            "tag": "snapToGrid",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "contextualSpacing",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          }
+        ]
+      },
+      "provenanceNotes": [
+        "未在规范中单独明确的实现参数见 docs/样式对照表.md；不把完整属性树全部宣称为学校规定。",
+        "两端对齐、首行缩进 2 字符，为已确认补充默认值。"
+      ]
+    },
+    {
+      "id": "TOC1",
+      "name": "TOC 1",
+      "type": "paragraph",
+      "usage": "一级目录条目",
+      "quick": false,
+      "priority": null,
+      "fonts": {
+        "ascii": "宋体",
+        "hAnsi": "宋体",
+        "eastAsia": "宋体",
+        "cs": "宋体"
+      },
+      "sizePt": 14.0,
+      "bold": false,
+      "basedOn": "Normal",
+      "next": "Normal",
+      "alignment": "both",
+      "spacingRaw": {
+        "before": "120",
+        "after": "0",
+        "line": "240",
+        "lineRule": "auto"
+      },
+      "indentRaw": {
+        "left": "0",
+        "right": "0",
+        "firstLine": "0",
+        "leftChars": "0",
+        "rightChars": "0",
+        "firstLineChars": "0"
+      },
+      "outlineLevel": "9",
+      "pageBreakBefore": false,
+      "keepNext": false,
+      "characterProperties": {
+        "tag": "rPr",
+        "attributes": {},
+        "children": [
+          {
+            "tag": "rFonts",
+            "attributes": {
+              "ascii": "宋体",
+              "hAnsi": "宋体",
+              "eastAsia": "宋体",
+              "cs": "宋体"
+            },
+            "children": []
+          },
+          {
+            "tag": "sz",
+            "attributes": {
+              "val": "28"
+            },
+            "children": []
+          },
+          {
+            "tag": "szCs",
+            "attributes": {
+              "val": "28"
+            },
+            "children": []
+          },
+          {
+            "tag": "b",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "bCs",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "i",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "iCs",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "color",
+            "attributes": {
+              "val": "000000"
+            },
+            "children": []
+          }
+        ]
+      },
+      "paragraphProperties": {
+        "tag": "pPr",
+        "attributes": {},
+        "children": [
+          {
+            "tag": "keepNext",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "keepLines",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "pageBreakBefore",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "widowControl",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "spacing",
+            "attributes": {
+              "before": "120",
+              "after": "0",
+              "line": "240",
+              "lineRule": "auto"
+            },
+            "children": []
+          },
+          {
+            "tag": "jc",
+            "attributes": {
+              "val": "both"
+            },
+            "children": []
+          },
+          {
+            "tag": "ind",
+            "attributes": {
+              "left": "0",
+              "right": "0",
+              "firstLine": "0",
+              "leftChars": "0",
+              "rightChars": "0",
+              "firstLineChars": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "outlineLvl",
+            "attributes": {
+              "val": "9"
+            },
+            "children": []
+          },
+          {
+            "tag": "snapToGrid",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "contextualSpacing",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "tabs",
+            "attributes": {},
+            "children": [
+              {
+                "tag": "tab",
+                "attributes": {
+                  "val": "right",
+                  "leader": "dot",
+                  "pos": "8306"
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      "provenanceNotes": [
+        "未在规范中单独明确的实现参数见 docs/样式对照表.md；不把完整属性树全部宣称为学校规定。"
+      ]
+    },
+    {
+      "id": "TOC2",
+      "name": "TOC 2",
+      "type": "paragraph",
+      "usage": "二级目录条目",
+      "quick": false,
+      "priority": null,
+      "fonts": {
+        "ascii": "宋体",
+        "hAnsi": "宋体",
+        "eastAsia": "宋体",
+        "cs": "宋体"
+      },
+      "sizePt": 12.0,
+      "bold": false,
+      "basedOn": "Normal",
+      "next": "Normal",
+      "alignment": "both",
+      "spacingRaw": {
+        "before": "120",
+        "after": "0",
+        "line": "240",
+        "lineRule": "auto"
+      },
+      "indentRaw": {
+        "left": "0",
+        "right": "0",
+        "firstLine": "0",
+        "leftChars": "200",
+        "rightChars": "0",
+        "firstLineChars": "0"
+      },
+      "outlineLevel": "9",
+      "pageBreakBefore": false,
+      "keepNext": false,
+      "characterProperties": {
+        "tag": "rPr",
+        "attributes": {},
+        "children": [
+          {
+            "tag": "rFonts",
+            "attributes": {
+              "ascii": "宋体",
+              "hAnsi": "宋体",
+              "eastAsia": "宋体",
+              "cs": "宋体"
+            },
+            "children": []
+          },
+          {
+            "tag": "sz",
+            "attributes": {
+              "val": "24"
+            },
+            "children": []
+          },
+          {
+            "tag": "szCs",
+            "attributes": {
+              "val": "24"
+            },
+            "children": []
+          },
+          {
+            "tag": "b",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "bCs",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "i",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "iCs",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "color",
+            "attributes": {
+              "val": "000000"
+            },
+            "children": []
+          }
+        ]
+      },
+      "paragraphProperties": {
+        "tag": "pPr",
+        "attributes": {},
+        "children": [
+          {
+            "tag": "keepNext",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "keepLines",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "pageBreakBefore",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "widowControl",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "spacing",
+            "attributes": {
+              "before": "120",
+              "after": "0",
+              "line": "240",
+              "lineRule": "auto"
+            },
+            "children": []
+          },
+          {
+            "tag": "jc",
+            "attributes": {
+              "val": "both"
+            },
+            "children": []
+          },
+          {
+            "tag": "ind",
+            "attributes": {
+              "left": "0",
+              "right": "0",
+              "firstLine": "0",
+              "leftChars": "200",
+              "rightChars": "0",
+              "firstLineChars": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "outlineLvl",
+            "attributes": {
+              "val": "9"
+            },
+            "children": []
+          },
+          {
+            "tag": "snapToGrid",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "contextualSpacing",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "tabs",
+            "attributes": {},
+            "children": [
+              {
+                "tag": "tab",
+                "attributes": {
+                  "val": "right",
+                  "leader": "dot",
+                  "pos": "8306"
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      "provenanceNotes": [
+        "未在规范中单独明确的实现参数见 docs/样式对照表.md；不把完整属性树全部宣称为学校规定。"
+      ]
+    },
+    {
+      "id": "TOC3",
+      "name": "TOC 3",
+      "type": "paragraph",
+      "usage": "三级目录条目",
+      "quick": false,
+      "priority": null,
+      "fonts": {
+        "ascii": "宋体",
+        "hAnsi": "宋体",
+        "eastAsia": "宋体",
+        "cs": "宋体"
+      },
+      "sizePt": 10.5,
+      "bold": false,
+      "basedOn": "Normal",
+      "next": "Normal",
+      "alignment": "both",
+      "spacingRaw": {
+        "before": "120",
+        "after": "0",
+        "line": "240",
+        "lineRule": "auto"
+      },
+      "indentRaw": {
+        "left": "0",
+        "right": "0",
+        "firstLine": "0",
+        "leftChars": "400",
+        "rightChars": "0",
+        "firstLineChars": "0"
+      },
+      "outlineLevel": "9",
+      "pageBreakBefore": false,
+      "keepNext": false,
+      "characterProperties": {
+        "tag": "rPr",
+        "attributes": {},
+        "children": [
+          {
+            "tag": "rFonts",
+            "attributes": {
+              "ascii": "宋体",
+              "hAnsi": "宋体",
+              "eastAsia": "宋体",
+              "cs": "宋体"
+            },
+            "children": []
+          },
+          {
+            "tag": "sz",
+            "attributes": {
+              "val": "21"
+            },
+            "children": []
+          },
+          {
+            "tag": "szCs",
+            "attributes": {
+              "val": "21"
+            },
+            "children": []
+          },
+          {
+            "tag": "b",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "bCs",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "i",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "iCs",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "color",
+            "attributes": {
+              "val": "000000"
+            },
+            "children": []
+          }
+        ]
+      },
+      "paragraphProperties": {
+        "tag": "pPr",
+        "attributes": {},
+        "children": [
+          {
+            "tag": "keepNext",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "keepLines",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "pageBreakBefore",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "widowControl",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "spacing",
+            "attributes": {
+              "before": "120",
+              "after": "0",
+              "line": "240",
+              "lineRule": "auto"
+            },
+            "children": []
+          },
+          {
+            "tag": "jc",
+            "attributes": {
+              "val": "both"
+            },
+            "children": []
+          },
+          {
+            "tag": "ind",
+            "attributes": {
+              "left": "0",
+              "right": "0",
+              "firstLine": "0",
+              "leftChars": "400",
+              "rightChars": "0",
+              "firstLineChars": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "outlineLvl",
+            "attributes": {
+              "val": "9"
+            },
+            "children": []
+          },
+          {
+            "tag": "snapToGrid",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "contextualSpacing",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "tabs",
+            "attributes": {},
+            "children": [
+              {
+                "tag": "tab",
+                "attributes": {
+                  "val": "right",
+                  "leader": "dot",
+                  "pos": "8306"
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      "provenanceNotes": [
+        "未在规范中单独明确的实现参数见 docs/样式对照表.md；不把完整属性树全部宣称为学校规定。"
+      ]
+    },
+    {
+      "id": "TableofFigures",
+      "name": "Table of Figures",
+      "type": "paragraph",
+      "usage": "图表清单条目",
+      "quick": false,
+      "priority": null,
+      "fonts": {
+        "ascii": "Times New Roman",
+        "hAnsi": "Times New Roman",
+        "eastAsia": "宋体",
+        "cs": "Times New Roman"
+      },
+      "sizePt": 10.5,
+      "bold": false,
+      "basedOn": "Normal",
+      "next": "Normal",
+      "alignment": "both",
+      "spacingRaw": {
+        "before": "0",
+        "after": "0",
+        "lineRule": "exact",
+        "line": "320"
+      },
+      "indentRaw": {
+        "left": "0",
+        "right": "0",
+        "firstLine": "0",
+        "leftChars": "0",
+        "rightChars": "0",
+        "firstLineChars": "0"
+      },
+      "outlineLevel": "9",
+      "pageBreakBefore": false,
+      "keepNext": false,
+      "characterProperties": {
+        "tag": "rPr",
+        "attributes": {},
+        "children": [
+          {
+            "tag": "rFonts",
+            "attributes": {
+              "ascii": "Times New Roman",
+              "hAnsi": "Times New Roman",
+              "eastAsia": "宋体",
+              "cs": "Times New Roman"
+            },
+            "children": []
+          },
+          {
+            "tag": "sz",
+            "attributes": {
+              "val": "21"
+            },
+            "children": []
+          },
+          {
+            "tag": "szCs",
+            "attributes": {
+              "val": "21"
+            },
+            "children": []
+          },
+          {
+            "tag": "b",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "bCs",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "i",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "iCs",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "color",
+            "attributes": {
+              "val": "000000"
+            },
+            "children": []
+          }
+        ]
+      },
+      "paragraphProperties": {
+        "tag": "pPr",
+        "attributes": {},
+        "children": [
+          {
+            "tag": "keepNext",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "keepLines",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "pageBreakBefore",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "widowControl",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "spacing",
+            "attributes": {
+              "before": "0",
+              "after": "0",
+              "lineRule": "exact",
+              "line": "320"
+            },
+            "children": []
+          },
+          {
+            "tag": "jc",
+            "attributes": {
+              "val": "both"
+            },
+            "children": []
+          },
+          {
+            "tag": "ind",
+            "attributes": {
+              "left": "0",
+              "right": "0",
+              "firstLine": "0",
+              "leftChars": "0",
+              "rightChars": "0",
+              "firstLineChars": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "outlineLvl",
+            "attributes": {
+              "val": "9"
+            },
+            "children": []
+          },
+          {
+            "tag": "snapToGrid",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "contextualSpacing",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "tabs",
+            "attributes": {},
+            "children": [
+              {
+                "tag": "tab",
+                "attributes": {
+                  "val": "right",
+                  "leader": "dot",
+                  "pos": "8306"
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      "provenanceNotes": [
+        "未在规范中单独明确的实现参数见 docs/样式对照表.md；不把完整属性树全部宣称为学校规定。"
+      ]
+    },
+    {
+      "id": "Header",
+      "name": "header",
+      "type": "paragraph",
+      "usage": "中文页眉",
+      "quick": false,
+      "priority": "99",
+      "fonts": {
+        "ascii": "宋体",
+        "hAnsi": "宋体",
+        "eastAsia": "宋体",
+        "cs": "宋体"
+      },
+      "sizePt": 10.5,
+      "bold": false,
+      "basedOn": "Normal",
+      "next": "Normal",
+      "alignment": "center",
+      "spacingRaw": {
+        "before": "0",
+        "after": "0",
+        "line": "240",
+        "lineRule": "auto"
+      },
+      "indentRaw": {
+        "left": "0",
+        "right": "0",
+        "firstLine": "0",
+        "leftChars": "0",
+        "rightChars": "0",
+        "firstLineChars": "0"
+      },
+      "outlineLevel": "9",
+      "pageBreakBefore": false,
+      "keepNext": false,
+      "characterProperties": {
+        "tag": "rPr",
+        "attributes": {},
+        "children": [
+          {
+            "tag": "rFonts",
+            "attributes": {
+              "ascii": "宋体",
+              "hAnsi": "宋体",
+              "eastAsia": "宋体",
+              "cs": "宋体"
+            },
+            "children": []
+          },
+          {
+            "tag": "sz",
+            "attributes": {
+              "val": "21"
+            },
+            "children": []
+          },
+          {
+            "tag": "szCs",
+            "attributes": {
+              "val": "21"
+            },
+            "children": []
+          },
+          {
+            "tag": "b",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "bCs",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "i",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "iCs",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "color",
+            "attributes": {
+              "val": "000000"
+            },
+            "children": []
+          }
+        ]
+      },
+      "paragraphProperties": {
+        "tag": "pPr",
+        "attributes": {},
+        "children": [
+          {
+            "tag": "keepNext",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "keepLines",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "pageBreakBefore",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "widowControl",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "spacing",
+            "attributes": {
+              "before": "0",
+              "after": "0",
+              "line": "240",
+              "lineRule": "auto"
+            },
+            "children": []
+          },
+          {
+            "tag": "jc",
+            "attributes": {
+              "val": "center"
+            },
+            "children": []
+          },
+          {
+            "tag": "ind",
+            "attributes": {
+              "left": "0",
+              "right": "0",
+              "firstLine": "0",
+              "leftChars": "0",
+              "rightChars": "0",
+              "firstLineChars": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "outlineLvl",
+            "attributes": {
+              "val": "9"
+            },
+            "children": []
+          },
+          {
+            "tag": "snapToGrid",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "contextualSpacing",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          }
+        ]
+      },
+      "provenanceNotes": [
+        "未在规范中单独明确的实现参数见 docs/样式对照表.md；不把完整属性树全部宣称为学校规定。"
+      ]
+    },
+    {
+      "id": "Footer",
+      "name": "footer",
+      "type": "paragraph",
+      "usage": "页码",
+      "quick": false,
+      "priority": "99",
+      "fonts": {
+        "ascii": "宋体",
+        "hAnsi": "宋体",
+        "eastAsia": "宋体",
+        "cs": "宋体"
+      },
+      "sizePt": 10.5,
+      "bold": false,
+      "basedOn": "Normal",
+      "next": "Normal",
+      "alignment": "center",
+      "spacingRaw": {
+        "before": "0",
+        "after": "0",
+        "line": "240",
+        "lineRule": "auto"
+      },
+      "indentRaw": {
+        "left": "0",
+        "right": "0",
+        "firstLine": "0",
+        "leftChars": "0",
+        "rightChars": "0",
+        "firstLineChars": "0"
+      },
+      "outlineLevel": "9",
+      "pageBreakBefore": false,
+      "keepNext": false,
+      "characterProperties": {
+        "tag": "rPr",
+        "attributes": {},
+        "children": [
+          {
+            "tag": "rFonts",
+            "attributes": {
+              "ascii": "宋体",
+              "hAnsi": "宋体",
+              "eastAsia": "宋体",
+              "cs": "宋体"
+            },
+            "children": []
+          },
+          {
+            "tag": "sz",
+            "attributes": {
+              "val": "21"
+            },
+            "children": []
+          },
+          {
+            "tag": "szCs",
+            "attributes": {
+              "val": "21"
+            },
+            "children": []
+          },
+          {
+            "tag": "b",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "bCs",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "i",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "iCs",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "color",
+            "attributes": {
+              "val": "000000"
+            },
+            "children": []
+          }
+        ]
+      },
+      "paragraphProperties": {
+        "tag": "pPr",
+        "attributes": {},
+        "children": [
+          {
+            "tag": "keepNext",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "keepLines",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "pageBreakBefore",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "widowControl",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "spacing",
+            "attributes": {
+              "before": "0",
+              "after": "0",
+              "line": "240",
+              "lineRule": "auto"
+            },
+            "children": []
+          },
+          {
+            "tag": "jc",
+            "attributes": {
+              "val": "center"
+            },
+            "children": []
+          },
+          {
+            "tag": "ind",
+            "attributes": {
+              "left": "0",
+              "right": "0",
+              "firstLine": "0",
+              "leftChars": "0",
+              "rightChars": "0",
+              "firstLineChars": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "outlineLvl",
+            "attributes": {
+              "val": "9"
+            },
+            "children": []
+          },
+          {
+            "tag": "snapToGrid",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "contextualSpacing",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          }
+        ]
+      },
+      "provenanceNotes": [
+        "未在规范中单独明确的实现参数见 docs/样式对照表.md；不把完整属性树全部宣称为学校规定。"
+      ]
+    },
+    {
+      "id": "英文页眉",
+      "name": "英文页眉",
+      "type": "paragraph",
+      "usage": "英文页眉",
+      "quick": false,
+      "priority": null,
+      "fonts": {
+        "ascii": "Times New Roman",
+        "hAnsi": "Times New Roman",
+        "eastAsia": "Times New Roman",
+        "cs": "Times New Roman"
+      },
+      "sizePt": 10.5,
+      "bold": false,
+      "basedOn": "Normal",
+      "next": "Normal",
+      "alignment": "center",
+      "spacingRaw": {
+        "before": "0",
+        "after": "0",
+        "line": "240",
+        "lineRule": "auto"
+      },
+      "indentRaw": {
+        "left": "0",
+        "right": "0",
+        "firstLine": "0",
+        "leftChars": "0",
+        "rightChars": "0",
+        "firstLineChars": "0"
+      },
+      "outlineLevel": "9",
+      "pageBreakBefore": false,
+      "keepNext": false,
+      "characterProperties": {
+        "tag": "rPr",
+        "attributes": {},
+        "children": [
+          {
+            "tag": "rFonts",
+            "attributes": {
+              "ascii": "Times New Roman",
+              "hAnsi": "Times New Roman",
+              "eastAsia": "Times New Roman",
+              "cs": "Times New Roman"
+            },
+            "children": []
+          },
+          {
+            "tag": "sz",
+            "attributes": {
+              "val": "21"
+            },
+            "children": []
+          },
+          {
+            "tag": "szCs",
+            "attributes": {
+              "val": "21"
+            },
+            "children": []
+          },
+          {
+            "tag": "b",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "bCs",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "i",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "iCs",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "color",
+            "attributes": {
+              "val": "000000"
+            },
+            "children": []
+          }
+        ]
+      },
+      "paragraphProperties": {
+        "tag": "pPr",
+        "attributes": {},
+        "children": [
+          {
+            "tag": "keepNext",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "keepLines",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "pageBreakBefore",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "widowControl",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "spacing",
+            "attributes": {
+              "before": "0",
+              "after": "0",
+              "line": "240",
+              "lineRule": "auto"
+            },
+            "children": []
+          },
+          {
+            "tag": "jc",
+            "attributes": {
+              "val": "center"
+            },
+            "children": []
+          },
+          {
+            "tag": "ind",
+            "attributes": {
+              "left": "0",
+              "right": "0",
+              "firstLine": "0",
+              "leftChars": "0",
+              "rightChars": "0",
+              "firstLineChars": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "outlineLvl",
+            "attributes": {
+              "val": "9"
+            },
+            "children": []
+          },
+          {
+            "tag": "snapToGrid",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "contextualSpacing",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          }
+        ]
+      },
+      "provenanceNotes": [
+        "未在规范中单独明确的实现参数见 docs/样式对照表.md；不把完整属性树全部宣称为学校规定。"
+      ]
+    },
+    {
+      "id": "局部加粗",
+      "name": "局部加粗",
+      "type": "character",
+      "usage": "关键词标签等局部加粗",
+      "quick": false,
+      "priority": null,
+      "fonts": {},
+      "sizePt": null,
+      "bold": true,
+      "basedOn": "DefaultParagraphFont",
+      "next": null,
+      "alignment": null,
+      "spacingRaw": {},
+      "indentRaw": {},
+      "outlineLevel": null,
+      "pageBreakBefore": false,
+      "keepNext": false,
+      "characterProperties": {
+        "tag": "rPr",
+        "attributes": {},
+        "children": [
+          {
+            "tag": "b",
+            "attributes": {
+              "val": "1"
+            },
+            "children": []
+          },
+          {
+            "tag": "bCs",
+            "attributes": {
+              "val": "1"
+            },
+            "children": []
+          }
+        ]
+      },
+      "paragraphProperties": null,
+      "provenanceNotes": [
+        "未在规范中单独明确的实现参数见 docs/样式对照表.md；不把完整属性树全部宣称为学校规定。"
+      ]
+    },
+    {
+      "id": "封面信息四号",
+      "name": "封面信息四号",
+      "type": "character",
+      "usage": "封面四号文字",
+      "quick": false,
+      "priority": null,
+      "fonts": {
+        "ascii": "楷体_GB2312",
+        "hAnsi": "楷体_GB2312",
+        "eastAsia": "楷体_GB2312",
+        "cs": "楷体_GB2312"
+      },
+      "sizePt": 14.0,
+      "bold": false,
+      "basedOn": "DefaultParagraphFont",
+      "next": null,
+      "alignment": null,
+      "spacingRaw": {},
+      "indentRaw": {},
+      "outlineLevel": null,
+      "pageBreakBefore": false,
+      "keepNext": false,
+      "characterProperties": {
+        "tag": "rPr",
+        "attributes": {},
+        "children": [
+          {
+            "tag": "rFonts",
+            "attributes": {
+              "ascii": "楷体_GB2312",
+              "hAnsi": "楷体_GB2312",
+              "eastAsia": "楷体_GB2312",
+              "cs": "楷体_GB2312"
+            },
+            "children": []
+          },
+          {
+            "tag": "sz",
+            "attributes": {
+              "val": "28"
+            },
+            "children": []
+          },
+          {
+            "tag": "szCs",
+            "attributes": {
+              "val": "28"
+            },
+            "children": []
+          },
+          {
+            "tag": "b",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "bCs",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "i",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "iCs",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "color",
+            "attributes": {
+              "val": "000000"
+            },
+            "children": []
+          }
+        ]
+      },
+      "paragraphProperties": null,
+      "provenanceNotes": [
+        "未在规范中单独明确的实现参数见 docs/样式对照表.md；不把完整属性树全部宣称为学校规定。"
+      ]
+    },
+    {
+      "id": "封面信息三号",
+      "name": "封面信息三号",
+      "type": "character",
+      "usage": "封面三号文字",
+      "quick": false,
+      "priority": null,
+      "fonts": {
+        "ascii": "楷体_GB2312",
+        "hAnsi": "楷体_GB2312",
+        "eastAsia": "楷体_GB2312",
+        "cs": "楷体_GB2312"
+      },
+      "sizePt": 16.0,
+      "bold": false,
+      "basedOn": "DefaultParagraphFont",
+      "next": null,
+      "alignment": null,
+      "spacingRaw": {},
+      "indentRaw": {},
+      "outlineLevel": null,
+      "pageBreakBefore": false,
+      "keepNext": false,
+      "characterProperties": {
+        "tag": "rPr",
+        "attributes": {},
+        "children": [
+          {
+            "tag": "rFonts",
+            "attributes": {
+              "ascii": "楷体_GB2312",
+              "hAnsi": "楷体_GB2312",
+              "eastAsia": "楷体_GB2312",
+              "cs": "楷体_GB2312"
+            },
+            "children": []
+          },
+          {
+            "tag": "sz",
+            "attributes": {
+              "val": "32"
+            },
+            "children": []
+          },
+          {
+            "tag": "szCs",
+            "attributes": {
+              "val": "32"
+            },
+            "children": []
+          },
+          {
+            "tag": "b",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "bCs",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "i",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "iCs",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "color",
+            "attributes": {
+              "val": "000000"
+            },
+            "children": []
+          }
+        ]
+      },
+      "paragraphProperties": null,
+      "provenanceNotes": [
+        "未在规范中单独明确的实现参数见 docs/样式对照表.md；不把完整属性树全部宣称为学校规定。"
+      ]
+    },
+    {
+      "id": "封面题目二号",
+      "name": "封面题目二号",
+      "type": "character",
+      "usage": "封面二号论文题目",
+      "quick": false,
+      "priority": null,
+      "fonts": {
+        "ascii": "楷体_GB2312",
+        "hAnsi": "楷体_GB2312",
+        "eastAsia": "楷体_GB2312",
+        "cs": "楷体_GB2312"
+      },
+      "sizePt": 22.0,
+      "bold": false,
+      "basedOn": "DefaultParagraphFont",
+      "next": null,
+      "alignment": null,
+      "spacingRaw": {},
+      "indentRaw": {},
+      "outlineLevel": null,
+      "pageBreakBefore": false,
+      "keepNext": false,
+      "characterProperties": {
+        "tag": "rPr",
+        "attributes": {},
+        "children": [
+          {
+            "tag": "rFonts",
+            "attributes": {
+              "ascii": "楷体_GB2312",
+              "hAnsi": "楷体_GB2312",
+              "eastAsia": "楷体_GB2312",
+              "cs": "楷体_GB2312"
+            },
+            "children": []
+          },
+          {
+            "tag": "sz",
+            "attributes": {
+              "val": "44"
+            },
+            "children": []
+          },
+          {
+            "tag": "szCs",
+            "attributes": {
+              "val": "44"
+            },
+            "children": []
+          },
+          {
+            "tag": "b",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "bCs",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "i",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "iCs",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "color",
+            "attributes": {
+              "val": "000000"
+            },
+            "children": []
+          }
+        ]
+      },
+      "paragraphProperties": null,
+      "provenanceNotes": [
+        "未在规范中单独明确的实现参数见 docs/样式对照表.md；不把完整属性树全部宣称为学校规定。"
+      ]
+    },
+    {
+      "id": "封面校名初号",
+      "name": "封面校名初号",
+      "type": "character",
+      "usage": "封面校名",
+      "quick": false,
+      "priority": null,
+      "fonts": {
+        "ascii": "华文行楷",
+        "hAnsi": "华文行楷",
+        "eastAsia": "华文行楷",
+        "cs": "华文行楷"
+      },
+      "sizePt": 42.0,
+      "bold": false,
+      "basedOn": "DefaultParagraphFont",
+      "next": null,
+      "alignment": null,
+      "spacingRaw": {},
+      "indentRaw": {},
+      "outlineLevel": null,
+      "pageBreakBefore": false,
+      "keepNext": false,
+      "characterProperties": {
+        "tag": "rPr",
+        "attributes": {},
+        "children": [
+          {
+            "tag": "rFonts",
+            "attributes": {
+              "ascii": "华文行楷",
+              "hAnsi": "华文行楷",
+              "eastAsia": "华文行楷",
+              "cs": "华文行楷"
+            },
+            "children": []
+          },
+          {
+            "tag": "sz",
+            "attributes": {
+              "val": "84"
+            },
+            "children": []
+          },
+          {
+            "tag": "szCs",
+            "attributes": {
+              "val": "84"
+            },
+            "children": []
+          },
+          {
+            "tag": "b",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "bCs",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "i",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "iCs",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "color",
+            "attributes": {
+              "val": "000000"
+            },
+            "children": []
+          }
+        ]
+      },
+      "paragraphProperties": null,
+      "provenanceNotes": [
+        "未在规范中单独明确的实现参数见 docs/样式对照表.md；不把完整属性树全部宣称为学校规定。"
+      ]
+    },
+    {
+      "id": "封面学位小初",
+      "name": "封面学位小初",
+      "type": "character",
+      "usage": "封面学位名称",
+      "quick": false,
+      "priority": null,
+      "fonts": {
+        "ascii": "黑体",
+        "hAnsi": "黑体",
+        "eastAsia": "黑体",
+        "cs": "黑体"
+      },
+      "sizePt": 36.0,
+      "bold": false,
+      "basedOn": "DefaultParagraphFont",
+      "next": null,
+      "alignment": null,
+      "spacingRaw": {},
+      "indentRaw": {},
+      "outlineLevel": null,
+      "pageBreakBefore": false,
+      "keepNext": false,
+      "characterProperties": {
+        "tag": "rPr",
+        "attributes": {},
+        "children": [
+          {
+            "tag": "rFonts",
+            "attributes": {
+              "ascii": "黑体",
+              "hAnsi": "黑体",
+              "eastAsia": "黑体",
+              "cs": "黑体"
+            },
+            "children": []
+          },
+          {
+            "tag": "sz",
+            "attributes": {
+              "val": "72"
+            },
+            "children": []
+          },
+          {
+            "tag": "szCs",
+            "attributes": {
+              "val": "72"
+            },
+            "children": []
+          },
+          {
+            "tag": "b",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "bCs",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "i",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "iCs",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "color",
+            "attributes": {
+              "val": "000000"
+            },
+            "children": []
+          }
+        ]
+      },
+      "paragraphProperties": null,
+      "provenanceNotes": [
+        "未在规范中单独明确的实现参数见 docs/样式对照表.md；不把完整属性树全部宣称为学校规定。"
+      ]
+    },
+    {
+      "id": "英文封面三号",
+      "name": "英文封面三号",
+      "type": "character",
+      "usage": "英文封面三号文字",
+      "quick": false,
+      "priority": null,
+      "fonts": {
+        "ascii": "Times New Roman",
+        "hAnsi": "Times New Roman",
+        "eastAsia": "Times New Roman",
+        "cs": "Times New Roman"
+      },
+      "sizePt": 16.0,
+      "bold": false,
+      "basedOn": "DefaultParagraphFont",
+      "next": null,
+      "alignment": null,
+      "spacingRaw": {},
+      "indentRaw": {},
+      "outlineLevel": null,
+      "pageBreakBefore": false,
+      "keepNext": false,
+      "characterProperties": {
+        "tag": "rPr",
+        "attributes": {},
+        "children": [
+          {
+            "tag": "rFonts",
+            "attributes": {
+              "ascii": "Times New Roman",
+              "hAnsi": "Times New Roman",
+              "eastAsia": "Times New Roman",
+              "cs": "Times New Roman"
+            },
+            "children": []
+          },
+          {
+            "tag": "sz",
+            "attributes": {
+              "val": "32"
+            },
+            "children": []
+          },
+          {
+            "tag": "szCs",
+            "attributes": {
+              "val": "32"
+            },
+            "children": []
+          },
+          {
+            "tag": "b",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "bCs",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "i",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "iCs",
+            "attributes": {
+              "val": "0"
+            },
+            "children": []
+          },
+          {
+            "tag": "color",
+            "attributes": {
+              "val": "000000"
+            },
+            "children": []
+          }
+        ]
+      },
+      "paragraphProperties": null,
+      "provenanceNotes": [
+        "未在规范中单独明确的实现参数见 docs/样式对照表.md；不把完整属性树全部宣称为学校规定。"
+      ]
+    }
+  ]
+}

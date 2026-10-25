@@ -1,0 +1,48 @@
+name: 问题反馈
+description: 报告安装、恢复或样式显示问题，不上传私人文档
+title: "[问题] "
+body:
+  - type: markdown
+    attributes:
+      value: 请先阅读 FAQ。不要上传真实论文、个人 Normal.dotm、字体文件、账号信息或含私人路径的原始日志。
+  - type: input
+    id: app_version
+    attributes:
+      label: 助手版本
+      description: 在程序或下载包中看到的版本号。
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Windows 与 Word 版本
+      description: 请注明 Windows 版本、Word 版本以及 Office 是 32 位还是 64 位。
+    validations:
+      required: true
+  - type: dropdown
+    id: operation
+    attributes:
+      label: 出现问题的操作
+      options:
+        - 环境或字体检查
+        - 配置默认样式
+        - Word 新建空白文档
+        - 导入已有 DOCX 副本
+        - 恢复备份
+        - 独立模板或示例
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 操作与实际结果
+      description: 描述可重复的操作、期待结果和实际结果。错误文字可以粘贴，但请先删除个人信息。
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: 信息检查
+      options:
+        - label: 我没有附上私人模板、真实论文、字体二进制或未清理的私人信息。
+          required: true
