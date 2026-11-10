@@ -15,7 +15,7 @@ internal sealed class MainForm : Form
 
     public MainForm()
     {
-        Text = "郑大学位论文样式助手 · " + AssetStore.Version; // 标明预览版身份。
+        Text = "郑州大学硕士学位论文word模板样式助手 · " + AssetStore.Version; // 标明预览版身份。
         Font = new Font("Microsoft YaHei UI", 10); // 界面字体与论文排版字体独立。
         MinimumSize = new Size(900, 700); // 保证主要按钮与结果区可见。
         Size = new Size(1060, 800); // 普通屏幕可完整显示。
@@ -27,7 +27,7 @@ internal sealed class MainForm : Form
         layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 260));
         layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 38));
         layout.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
-        layout.Controls.Add(new Label { Text = "郑大学位论文样式助手", Font = new Font(Font.FontFamily, 22, FontStyle.Bold), AutoSize = true, ForeColor = Color.FromArgb(25, 52, 67) }); // 清楚说明工具用途。
+        layout.Controls.Add(new Label { Text = "郑州大学硕士学位论文word模板样式助手", Font = new Font(Font.FontFamily, 22, FontStyle.Bold), AutoSize = true, ForeColor = Color.FromArgb(25, 52, 67) }); // 清楚说明工具用途。
         layout.Controls.Add(new Label { Text = "26 项论文样式 · 12 项常用入口 · 自动备份与恢复\n修改默认模板不会自动修改旧文档；已有论文请使用“导入 DOCX 副本”。", Dock = DockStyle.Fill, AutoSize = false }); // 将最容易误解的规则放在首页。
         var tabs = new TabControl { Dock = DockStyle.Fill }; // 将主要操作、恢复和说明分开显示。
         var home = new TabPage("开始配置") { Padding = new Padding(12) };
