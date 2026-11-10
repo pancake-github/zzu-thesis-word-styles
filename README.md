@@ -6,15 +6,17 @@
 
 ## 下载
 
-首版为 **v0.1.0-beta.1 预览版**。请在 [发布页](https://github.com/pancake-github/zzu-thesis-word-styles/releases/tag/v0.1.0-beta.1) 的 Assets 区域下载：
+当前为 **v0.1.0-beta.2 预览版**。请在 [发布页](https://github.com/pancake-github/zzu-thesis-word-styles/releases/tag/v0.1.0-beta.2) 的 Assets 区域下载：
 
 | 下载文件 | 适合谁 |
 |---|---|
-| [Windows 中文助手 ZIP](https://github.com/pancake-github/zzu-thesis-word-styles/releases/download/v0.1.0-beta.1/ZZUWordStyles-v0.1.0-beta.1-win-x64.zip) | 希望为本机 Word 配置默认样式、导入旧文档副本或管理备份 |
-| [仅模板 ZIP](https://github.com/pancake-github/zzu-thesis-word-styles/releases/download/v0.1.0-beta.1/ZZUWordStyles-v0.1.0-beta.1-templates.zip) | 希望只在论文中使用独立 DOTX 模板与示例 DOCX |
-| [SHA256SUMS.txt](https://github.com/pancake-github/zzu-thesis-word-styles/releases/download/v0.1.0-beta.1/SHA256SUMS.txt) | 核对下载文件是否完整 |
+| [Windows 中文助手 ZIP](https://github.com/pancake-github/zzu-thesis-word-styles/releases/download/v0.1.0-beta.2/ZZUWordStyles-v0.1.0-beta.2-win-x64.zip) | 希望为本机 Word 配置默认样式、导入旧文档副本或管理备份 |
+| [仅模板 ZIP](https://github.com/pancake-github/zzu-thesis-word-styles/releases/download/v0.1.0-beta.2/ZZUWordStyles-v0.1.0-beta.2-templates.zip) | 希望只在论文中使用独立 DOTX 模板与示例 DOCX |
+| [SHA256SUMS.txt](https://github.com/pancake-github/zzu-thesis-word-styles/releases/download/v0.1.0-beta.2/SHA256SUMS.txt) | 核对下载文件是否完整 |
 
 助手自带 .NET 运行时，不需要安装 Python、额外的 .NET 或 Codex。**需要已经安装并能正常启动的桌面 Microsoft Word。** 首版面向 Windows x64；具体系统与 Office 组合以 [兼容性记录](docs/兼容性与验收.md) 为准，未测试的组合不会标为支持。WPS、Mac、网页版 Word 不在本版范围内。
+
+兼容性记录中的 Word 实测属于 v0.1.0-beta.1；本版的实际验证情况以发布说明为准。
 
 ## 第一次使用
 
@@ -27,7 +29,7 @@
 
 ![中文助手首页](docs/images/assistant-home.png)
 
-截图为当前源码构建的界面预览；已发布的 v0.1.0-beta.1 下载包仍显示原名称。
+截图展示 v0.1.0-beta.2 的助手界面。
 
 > 修改默认模板不会自动修改以前保存的文档。已有文档仍保留自身样式和直接格式。
 

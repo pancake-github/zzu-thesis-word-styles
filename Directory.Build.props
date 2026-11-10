@@ -6,7 +6,7 @@
     <Deterministic>true</Deterministic>
     <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
     <PathMap>$(MSBuildThisFileDirectory)=/_/</PathMap>
-    <Version>0.1.0-beta.1</Version>
+    <Version>0.1.0-beta.2</Version>
     <Authors>pancake-github</Authors>
     <Company>Community project</Company>
     <Copyright>Copyright (c) 2026 pancake-github</Copyright>

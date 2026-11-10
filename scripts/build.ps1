@@ -1,4 +1,4 @@
-param([string]$Version = 'v0.1.0-beta.1') # 文件名与 Release 标签使用同一版本。
+param([string]$Version = 'v0.1.0-beta.2') # 文件名与 Release 标签使用同一版本。
 $ErrorActionPreference = 'Stop' # 任一步失败都不继续打包。
 $root = Split-Path -Parent $PSScriptRoot # 从脚本位置确定仓库目录。
 $output = Join-Path $root 'artifacts' # 仅写入忽略的构建目录。

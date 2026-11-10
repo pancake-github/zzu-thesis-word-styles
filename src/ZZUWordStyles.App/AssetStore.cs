@@ -5,7 +5,7 @@ namespace ZZUWordStyles.App;
 
 internal static class AssetStore
 {
-    public const string Version = "0.1.0-beta.1"; // 此版本与发布标签对应。
+    public const string Version = "0.1.0-beta.2"; // 此版本与发布标签对应。
     public static string DataRoot => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "ZZUWordStyles"); // 所有运行记录只在当前用户目录。
     public static string BackupRoot => Path.Combine(DataRoot, "backups"); // 完整备份与公开下载目录分开。
     public static byte[] Read(bool example = false)
